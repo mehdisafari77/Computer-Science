@@ -60,3 +60,24 @@ function detectPangram(str){
 console.log(detectPangram("The quick brown fox jumps over the lazy dog!"));
 
 /* Runtime Complexity: O(n^2)  && Space Complexity: O(n^2) */
+
+
+// Algo4: Write a function, find_longest_word, that takes a list of words and returns the length of the longest one.
+
+const wordList = ['hi', 'hello', 'legendary']
+
+const findLongestWordCount = arr =>{
+    let longestWord = 0;
+    arr.forEach(element => {
+        if(element.length > longestWord){
+            longestWord = element.length
+        } else {
+            longestWord = longestWord
+        }
+    });
+    return longestWord
+}
+
+console.log(findLongestWordCount(wordList))
+
+/* Runtime Complexity: O(n)  && Space Complexity: O(n) */
