@@ -19,3 +19,31 @@ const addToZero = arr =>{
 console.log(addToZero(arr))
 
 /* Runtime Complexity: O(n^2)  && Space Complexity: O(n^2) */
+
+
+// Algo2: Write a function that takes in a single word, as a string. It should return True if that word contains only unique characters. Return False otherwise.
+
+
+function hasUniqueChars(word)
+{
+    for(let i = 0; i < word.length; i++)
+        for(let j = i + 1; j < word.length; j++)
+            if (word[i] == word[j])
+                return false;
+ 
+    // If no duplicate characters
+    // encountered, return true
+    return true;
+}
+ 
+let input = "moonday";
+console.log(hasUniqueChars(input))
+ 
+if (hasUniqueChars(input) == true)
+    console.log("The word " + input +
+                   " has all unique characters");
+else
+    console.log("The word " + input +
+                   " has duplicate characters");
+
+/* Runtime Complexity: O(n^2)  && Space Complexity: O(n^2) */
