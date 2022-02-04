@@ -23,6 +23,7 @@ console.log(addToZero(arr))
 
 // Algo2: Write a function that takes in a single word, as a string. It should return True if that word contains only unique characters. Return False otherwise.
 
+let input = "moonday";
 
 function hasUniqueChars(word)
 {
@@ -35,15 +36,27 @@ function hasUniqueChars(word)
     // encountered, return true
     return true;
 }
- 
-let input = "moonday";
 console.log(hasUniqueChars(input))
- 
-if (hasUniqueChars(input) == true)
-    console.log("The word " + input +
-                   " has all unique characters");
-else
-    console.log("The word " + input +
-                   " has duplicate characters");
+
+/* Runtime Complexity: O(n^2)  && Space Complexity: O(n^2) */
+
+
+// Algo3: A pangram is a sentence that contains all the letters of the English alphabet at least once, like “The quick brown fox jumps over the lazy dog.” Write a function to check a sentence to see if it is a pangram or not.
+
+function detectPangram(str){
+    const newStr = str.toLowerCase().replace(/[^A-Za-z]/g, '')
+    const set = new Set()
+    for(let i = 0; i < newStr.length; i++){
+        set.add(newStr[i])
+    }
+
+    if(set.size === 26){
+        return true
+    } else {
+        return false
+    }
+}
+
+console.log(detectPangram("The quick brown fox jumps over the lazy dog!"));
 
 /* Runtime Complexity: O(n^2)  && Space Complexity: O(n^2) */
